@@ -5,7 +5,7 @@
 
 > I created this simple Java application for my AP Computer Science A class to make shape classes and utilize methods with them!
 
-## What shapes can be called?
+## What shapes can be created?
 ### Ellipse 
 You can create an ellipse object by calling:
 ```
