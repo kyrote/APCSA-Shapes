@@ -39,7 +39,7 @@ class Ellipse {
     }
 
     double getCircumference() {
-        // approximate within 5% if becomes a "squashed" ellipse
+        // approximate within 5% if it becomes a "squashed" ellipse
         return 2 * Math.PI * Math.sqrt((Math.pow(this.r1, 2) + Math.pow(this.r2, 2)) / 2);
     }
 
