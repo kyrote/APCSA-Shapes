@@ -9,24 +9,24 @@
 ### Ellipse 
 You can create an ellipse object by calling:
 ```
-Ellipse e = new Ellipse(double r1, double r2); // (1, 1) is default
+Ellipse e = new Ellipse(double r1, double r2); // (1, 1) is default.
 ```
 Methods:
 ```
-e.setRadius(double r1, double r2); // r2 is optional
-e.getRadius(); // returns double[] => [r1, r2]
+e.setRadius(double r1, double r2); // r2 is optional.
+e.getRadius(); // returns double[] => [r1, r2].
 e.getArea();
-e.getCircumference(); // approximation; exact for circles
-e.equals(Ellipse e); // checks for equal radii
-e.toString(); // (color) circle/ellipse with radius ... (and ...)
-e.scale(double s1, double s2); // s2 is optional
+e.getCircumference(); // approximation; exact for circles.
+e.equals(Ellipse e); // checks for equal radii (and color).
+e.toString(); // (color) circle/ellipse with radius ... (and ...).
+e.scale(double s1, double s2); // s2 is optional.
 e.setColor(String c);
 ```
 
 ### Rectangle 
 You can create a rectangle object by calling:
 ```
-Rectangle r = new Rectangle(double len, double wid); // (1, 1) is default
+Rectangle r = new Rectangle(double len, double wid); // (1, 1) is default.
 ```
 Methods:
 ```
@@ -36,7 +36,7 @@ r.getLength();
 r.getWidth();
 r.getArea();
 r.getPerimeter();
-r.equals(Rectangle r);
+r.equals(Rectangle r); // checks for equal length and width (and color).
 r.toString(); // (color) rectangle with length ...
 r.setColor(String c);
 ```
@@ -44,7 +44,7 @@ r.setColor(String c);
 ### RegularPolygon 
 You can create a regular polygon object by calling:
 ```
-RegularPolygon r = new RegularPolygon(int sides, double len); // (3, 1) is default
+RegularPolygon r = new RegularPolygon(int sides, double len); // (3, 1) is default.
 ```
 Methods:
 ```
@@ -54,8 +54,8 @@ r.getNumSides();
 r.getSideLength();
 r.getArea();
 r.getPerimeter();
-r.equals(RegularPolygon r);
-r.addSides(int sides); // sides is optional
+r.equals(RegularPolygon r); // checks for equal sides and length (and color).
+r.addSides(int sides); // sides is optional.
 r.toString() // (color) regular polygon_name with side length ...
 r.setColor(String c);
 ```
