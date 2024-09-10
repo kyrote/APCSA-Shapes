@@ -140,11 +140,30 @@ class Rectangle {
 }
 
 class RegularPolygon {
+    String[] shapes = {
+        "equilateral triangle",
+        "square",
+        "pentagon",
+        "hexagon",
+        "heptagon",
+        "octagon",
+        "nonagon",
+        "hendecagon",
+        "tridecagon",
+        "tetradecagon",
+        "pentadecagon",
+        "hexadecagon",
+        "heptadecagon",
+        "octadecagon",
+        "enneadecagon",
+        "icosihenagon"
+    };    
+
     double length;
     int sides;
     String color;
 
-    RegularPolygon(double x, int y) {
+    RegularPolygon(int y, double x) {
         this.length = x;
         this.sides = y;
     }
@@ -163,12 +182,51 @@ class RegularPolygon {
     }
 
     void setSideLength(int x) {
+        this.length = x;
+    }
+
+    void setNumSides(int x) {
         this.sides = x;
     }
 
     int getNumSides() {
         return this.sides;
     } 
+
+    double getSideLength() {
+        return this.length;
+    }
+
+    double getArea() {
+        return this.sides * Math.pow(this.length, 2) * (1 / Math.tan(Math.PI / this.sides) / 4);
+    }
+
+    double getPerimeter() {
+        return this.length * this.sides;
+    }
+
+    boolean equals(RegularPolygon r) {
+        return (this.length == r.length && this.sides == r.sides);
+    }
+
+    void addSides(int x) {
+        this.sides += x;
+    }
+
+    void addSides() {
+        this.sides++;
+    }
+
+    public String toString() {
+        if (this.sides >= 3 && this.sides <= 20) {
+            if (this.sides <= 4) {
+                return shapes[this.sides - 3] + " with side length " + this.length;
+            }
+            return "regular " + shapes[this.sides - 3] + " with side length " + this.length;
+        }
+        return "polygon of " + this.sides + " sides with side length " + this.length;
+    }
+
 }
 
 class MethodExplorer {
@@ -193,6 +251,5 @@ class MethodExplorer {
 
         circ.scale(2, 3);
         System.out.println(circ.toString()); // final state (ellipse with radius 12.0 and 18.0)
-
     }
 }
