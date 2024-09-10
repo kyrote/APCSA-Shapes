@@ -58,7 +58,7 @@ class MethodExplorer {
         }
 
         boolean equals(Ellipse c) {
-            return (this.r1 == c.r1 && this.r2 == c.r2);
+            return (this.r1 == c.r1 && this.r2 == c.r2 && this.color == c.color);
         }
 
         public String toString() {
@@ -143,7 +143,7 @@ class MethodExplorer {
         }
 
         boolean equals(Rectangle r) {
-            return (this.length == r.length && this.width == r.width);
+            return (this.length == r.length && this.width == r.width && this.color == r.color);
         }
 
         public String toString() {
