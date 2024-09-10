@@ -1,4 +1,5 @@
 class Ellipse {
+
     double r1, r2;
     String color;
 
@@ -72,9 +73,11 @@ class Ellipse {
     void setColor(String c) {
         this.color = c;
     }
+
 }
 
 class Rectangle {
+
     double length, width;
     String color;
 
@@ -137,9 +140,11 @@ class Rectangle {
     void setColor(String c) {
         this.color = c;
     }
+
 }
 
 class RegularPolygon {
+
     String[] shapes = {
         "equilateral triangle",
         "square",
@@ -232,6 +237,7 @@ class RegularPolygon {
     void setColor(String c) {
         this.color = c;
     }
+
 }
 
 class MethodExplorer {
@@ -257,7 +263,5 @@ class MethodExplorer {
         circ.scale(2, 3);
         System.out.println(circ.toString()); // final state (ellipse with radius 12.0 and 18.0)
 
-        RegularPolygon poly = new RegularPolygon(5, 10);
-        System.out.println(poly);
     }
 }
