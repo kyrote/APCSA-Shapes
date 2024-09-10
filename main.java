@@ -23,11 +23,21 @@ class Ellipse {
             this.r1 = x.length > 0 ? x[0] : 1;
             this.r2 = x.length > 1 ? x[1] : x[0];
         }
+
+        void setRadius(double... x) {
+            this.r1 = x.length > 0 ? x[0] : 1;
+            this.r2 = x.length > 0 ? x[1] : x[0];
+        }
     */
 
-    void setRadius(double... x) {
-        this.r1 = x.length > 0 ? x[0] : 1;
-        this.r2 = x.length > 0 ? x[1] : x[0];
+    void setRadius(double x, double y) {
+        this.r1 = x;
+        this.r2 = y;
+    }
+
+    void setRadius(double x) {
+        this.r1 = x;
+        this.r2 = y;
     }
 
     double[] getRadius() {
@@ -41,7 +51,7 @@ class Ellipse {
 
     double getCircumference() {
         // approximate within 5% if it becomes a "squashed" ellipse
-        return 2 * Math.PI * Math.sqrt((Math.pow(this.r1, 2) + Math.pow(this.r2, 2)) / 2);
+        return 2 * Math.PI * Math.sqrt((Math.pow(this.r1, 2) + Math.pow(this.r2, 2)) / 2); // this is a formula used to approximate ellipse circumferences, however, it has 100% accuracy with circles.
     }
 
     boolean equals(Ellipse c) {
@@ -49,8 +59,8 @@ class Ellipse {
     }
 
     public String toString() {
-        String str = r1 == r2 ? "circle with radius " + r1 : "ellipse with radius " + this.r1 + " and " + this.r2;
-        return this.color != null ? this.color + " " + str : str;
+        String str = r1 == r2 ? "circle with radius " + r1 : "ellipse with radius " + this.r1 + " and " + this.r2; // if circle, print circle; if ellipse, print ellipse.
+        return this.color != null ? this.color + " " + str : str; // if there's a color, print it with that.
     }
 
     /* short-hand w/o overloading
@@ -134,7 +144,7 @@ class Rectangle {
 
     public String toString() {
         String str = "rectangle with length " + this.length + ", width " + this.width;
-        return this.color != null ? this.color + " " + str : str;
+        return this.color != null ? this.color + " " + str : str; // if there's a color, print it with that.
     }
 
     void setColor(String c) {
@@ -224,14 +234,14 @@ class RegularPolygon {
 
     public String toString() {
         String str;
-        str = "polygon of " + this.sides + " sides with side length " + this.length;
+        str = "polygon of " + this.sides + " sides with side length " + this.length; // worst case scenario; we cannot name the polygon.
         if (this.sides >= 3 && this.sides <= 20) {
-            str = "regular " + shapes[this.sides - 3] + " with side length " + this.length;
+            str = "regular " + shapes[this.sides - 3] + " with side length " + this.length; // sides > 4 so we search the array and add regular to the start of it.
             if (this.sides <= 4) {
-                str = shapes[this.sides - 3] + " with side length " + this.length;
+                str = shapes[this.sides - 3] + " with side length " + this.length; // either it's an equilateral triangle or square.
             }
         }
-        return color != null ? color + " " + str : str;
+        return color != null ? color + " " + str : str; // if there's a color, print it with that.
     }
 
     void setColor(String c) {
@@ -243,25 +253,27 @@ class RegularPolygon {
 class MethodExplorer {
     public static void main(String[] args) {
 
-        // Rectangle work
-        Rectangle rect = new Rectangle(5, 10);
-        System.out.println(rect.toString()); // (rectangle with length 5.0, width 10.0)
-
-        rect.setColor("blue");
-        System.out.println(rect.toString()); // final state (blue rectangle with length 5.0, width 10.0)
-
-        double area = rect.getArea();
-        System.out.println("The area of the rectangle is: " + area); // (The area of the rectangle is: 50.0)
-
-        // Circle work
-        Ellipse circ = new Ellipse(3);
-        System.out.println(circ.toString()); // (circle with radius 3.0)
-
-        circ.scale(2);
-        System.out.println(circ.toString()); // (circle with radius 6.0)
-
-        circ.scale(2, 3);
-        System.out.println(circ.toString()); // final state (ellipse with radius 12.0 and 18.0)
+        /* You can test my code out here!
+            // Rectangle work
+            Rectangle rect = new Rectangle(5, 10);
+            System.out.println(rect.toString()); // (rectangle with length 5.0, width 10.0)
+    
+            rect.setColor("blue");
+            System.out.println(rect.toString()); // final state (blue rectangle with length 5.0, width 10.0)
+    
+            double area = rect.getArea();
+            System.out.println("The area of the rectangle is: " + area); // (The area of the rectangle is: 50.0)
+    
+            // Circle work
+            Ellipse circ = new Ellipse(3);
+            System.out.println(circ.toString()); // (circle with radius 3.0)
+    
+            circ.scale(2);
+            System.out.println(circ.toString()); // (circle with radius 6.0)
+    
+            circ.scale(2, 3);
+            System.out.println(circ.toString()); // final state (ellipse with radius 12.0 and 18.0)
+        */
 
     }
 }
