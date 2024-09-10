@@ -1,5 +1,5 @@
 # Shapes (Documentation)
-![Java](https://badgen.net/badge/Language/Java/orange) ![APCSA](https://badgen.net/badge/Class/AP%20Computer%20Science%20A/green) ![Justin Phu](https://badgen.net/badge/Made%20By/Justin%20Phu/blue)
+![Java](https://badgen.net/badge/Language/Java/yellow) ![APCSA](https://badgen.net/badge/Class/AP%20Computer%20Science%20A/orange) ![Justin Phu](https://badgen.net/badge/Made%20By/Justin%20Phu/red)
 
 ## Why did you create this?
 
