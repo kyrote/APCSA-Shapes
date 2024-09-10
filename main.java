@@ -160,22 +160,22 @@ class MethodExplorer {
     public static class RegularPolygon {
 
         String[] shapes = {
-                "equilateral triangle",
-                "square",
-                "pentagon",
-                "hexagon",
-                "heptagon",
-                "octagon",
-                "nonagon",
-                "hendecagon",
-                "tridecagon",
-                "tetradecagon",
-                "pentadecagon",
-                "hexadecagon",
-                "heptadecagon",
-                "octadecagon",
-                "enneadecagon",
-                "icosihenagon"
+            "equilateral triangle",
+            "square",
+            "pentagon",
+            "hexagon",
+            "heptagon",
+            "octagon",
+            "nonagon",
+            "hendecagon",
+            "tridecagon",
+            "tetradecagon",
+            "pentadecagon",
+            "hexadecagon",
+            "heptadecagon",
+            "octadecagon",
+            "enneadecagon",
+            "icosihenagon"
         };
 
         double length;
