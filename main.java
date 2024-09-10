@@ -206,7 +206,7 @@ class RegularPolygon {
     }
 
     boolean equals(RegularPolygon r) {
-        return (this.length == r.length && this.sides == r.sides);
+        return (this.length == r.length && this.sides == r.sides && this.color == r.color);
     }
 
     void addSides(int x) {
@@ -218,15 +218,20 @@ class RegularPolygon {
     }
 
     public String toString() {
+        String str;
+        str = "polygon of " + this.sides + " sides with side length " + this.length;
         if (this.sides >= 3 && this.sides <= 20) {
+            str = "regular " + shapes[this.sides - 3] + " with side length " + this.length;
             if (this.sides <= 4) {
-                return shapes[this.sides - 3] + " with side length " + this.length;
+                str = shapes[this.sides - 3] + " with side length " + this.length;
             }
-            return "regular " + shapes[this.sides - 3] + " with side length " + this.length;
         }
-        return "polygon of " + this.sides + " sides with side length " + this.length;
+        return color != null ? color + " " + str : str;
     }
 
+    void setColor(String c) {
+        this.color = c;
+    }
 }
 
 class MethodExplorer {
@@ -251,5 +256,8 @@ class MethodExplorer {
 
         circ.scale(2, 3);
         System.out.println(circ.toString()); // final state (ellipse with radius 12.0 and 18.0)
+
+        RegularPolygon poly = new RegularPolygon(5, 10);
+        System.out.println(poly);
     }
 }
