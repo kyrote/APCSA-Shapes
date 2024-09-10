@@ -1,7 +1,7 @@
 # Shapes (Documentation)
 ![Java](https://badgen.net/badge/Language/Java/yellow) ![APCSA](https://badgen.net/badge/Class/AP%20Computer%20Science%20A/orange) ![Justin Phu](https://badgen.net/badge/Made%20By/Justin%20Phu/red)
 
-## Why did you create this?
+## Why did I create this?
 
 > I created this simple Java application for my AP Computer Science A class to make shape classes and utilize methods with them!
 
@@ -24,7 +24,7 @@ e.setColor(String c);
 ```
 
 ### Rectangle 
-You can create an rectangle object by calling:
+You can create a rectangle object by calling:
 ```
 Rectangle r = new Rectangle(double len, double wid); // (1, 1) is default
 ```
@@ -42,7 +42,7 @@ r.setColor(String c);
 ```
 
 ### RegularPolygon 
-You can create an regular polygon object by calling:
+You can create a regular polygon object by calling:
 ```
 RegularPolygon r = new RegularPolygon(int sides, double len); // (3, 1) is default
 ```
