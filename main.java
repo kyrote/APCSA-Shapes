@@ -1,4 +1,5 @@
 class MethodExplorer {
+
     public static class Ellipse {
 
         double r1, r2;
@@ -20,17 +21,17 @@ class MethodExplorer {
         }
 
         /*
-         * short-hand w/o overloading
-         * Ellipse(double... x) {
-         * this.r1 = x.length > 0 ? x[0] : 1;
-         * this.r2 = x.length > 1 ? x[1] : x[0];
-         * }
-         * 
-         * void setRadius(double... x) {
-         * this.r1 = x.length > 0 ? x[0] : 1;
-         * this.r2 = x.length > 0 ? x[1] : x[0];
-         * }
-         */
+            short-hand w/o overloading
+            Ellipse(double... x) {
+                this.r1 = x.length > 0 ? x[0] : 1;
+                this.r2 = x.length > 1 ? x[1] : x[0];
+            }
+              
+            void setRadius(double... x) {
+                this.r1 = x.length > 0 ? x[0] : 1;
+                this.r2 = x.length > 0 ? x[1] : x[0];
+            }
+        */
 
         void setRadius(double x, double y) {
             this.r1 = x;
@@ -53,14 +54,7 @@ class MethodExplorer {
 
         double getCircumference() {
             // approximate within 5% if it becomes a "squashed" ellipse
-            return 2 * Math.PI * Math.sqrt((Math.pow(this.r1, 2) + Math.pow(this.r2, 2)) / 2); // this is a formula used
-                                                                                               // to
-                                                                                               // approximate ellipse
-                                                                                               // circumferences,
-                                                                                               // however,
-                                                                                               // it has 100% accuracy
-                                                                                               // for
-                                                                                               // circles.
+            return 2 * Math.PI * Math.sqrt((Math.pow(this.r1, 2) + Math.pow(this.r2, 2)) / 2); // this is a formula used to approximate ellipse circumferences, however, it has 100% accuracy for circles.
         }
 
         boolean equals(Ellipse c) {
@@ -68,24 +62,17 @@ class MethodExplorer {
         }
 
         public String toString() {
-            String str = r1 == r2 ? "circle with radius " + r1 : "ellipse with radius " + this.r1 + " and " + this.r2; // if
-                                                                                                                       // circle,
-                                                                                                                       // print
-                                                                                                                       // circle;
-                                                                                                                       // if
-                                                                                                                       // ellipse,
-                                                                                                                       // print
-                                                                                                                       // ellipse.
+            String str = r1 == r2 ? "circle with radius " + r1 : "ellipse with radius " + this.r1 + " and " + this.r2; // if circle, print circle; if ellipse, print ellipse.
             return this.color != null ? this.color + " " + str : str; // if there's a color, print it with that.
         }
 
         /*
-         * short-hand w/o overloading
-         * void scale(double... x) {
-         * this.r1 *= x[0];
-         * this.r2 *= x.length > 1 ? x[1] : x[0];
-         * }
-         */
+            short-hand w/o overloading
+            void scale(double... x) {
+                this.r1 *= x[0];
+                this.r2 *= x.length > 1 ? x[1] : x[0];
+            }
+        */
 
         void scale(double x, double y) {
             this.r1 *= x;
@@ -124,12 +111,12 @@ class MethodExplorer {
         }
 
         /*
-         * short-hand w/o overloading
-         * Rectangle(double... x) {
-         * this.length = x.length > 0 ? x[0] : 1;
-         * this.width = x.length > 1 ? x[1] : x[0];
-         * }
-         */
+            short-hand w/o overloading
+            Rectangle(double... x) {
+                this.length = x.length > 0 ? x[0] : 1;
+                this.width = x.length > 1 ? x[1] : x[0];
+            }
+        */
 
         void setLength(double x) {
             this.length = x;
@@ -251,18 +238,11 @@ class MethodExplorer {
 
         public String toString() {
             String str;
-            str = "polygon of " + this.sides + " sides with side length " + this.length; // worst case scenario; we
-                                                                                         // cannot
-                                                                                         // name the polygon.
+            str = "polygon of " + this.sides + " sides with side length " + this.length; // worst case scenario; we cannot name the polygon.
             if (this.sides >= 3 && this.sides <= 20) {
-                str = "regular " + shapes[this.sides - 3] + " with side length " + this.length; // sides > 4 so we
-                                                                                                // search
-                                                                                                // the array and add
-                                                                                                // regular
-                                                                                                // to the start of it.
+                str = "regular " + shapes[this.sides - 3] + " with side length " + this.length; // sides > 4 so we search the array and add regular to the start of it.
                 if (this.sides <= 4) {
-                    str = shapes[this.sides - 3] + " with side length " + this.length; // either it's an equilateral
-                                                                                       // triangle or square.
+                    str = shapes[this.sides - 3] + " with side length " + this.length; // either it's an equilateral triangle or square.
                 }
             }
             return color != null ? color + " " + str : str; // if there's a color, print it with that.
@@ -299,4 +279,5 @@ class MethodExplorer {
         System.out.println(circ.toString()); // final state (ellipse with radius 12.0 and 18.0)
 
     }
+
 }
