@@ -37,7 +37,7 @@ class Ellipse {
 
     void setRadius(double x) {
         this.r1 = x;
-        this.r2 = y;
+        this.r2 = x;
     }
 
     double[] getRadius() {
