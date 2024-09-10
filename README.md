@@ -16,7 +16,7 @@ Methods:
 e.setRadius(double r1, double r2); // r2 is optional
 e.getRadius(); // returns double[] => [r1, r2]
 e.getArea();
-e.getCircumference();
+e.getCircumference(); // approximation; exact for circles
 e.equals(Ellipse e); // checks for equal radii
 e.toString(); // (color) circle/ellipse with radius ... (and ...)
 e.scale(double s1, double s2); // s2 is optional
