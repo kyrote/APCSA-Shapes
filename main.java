@@ -51,7 +51,7 @@ class Ellipse {
 
     double getCircumference() {
         // approximate within 5% if it becomes a "squashed" ellipse
-        return 2 * Math.PI * Math.sqrt((Math.pow(this.r1, 2) + Math.pow(this.r2, 2)) / 2); // this is a formula used to approximate ellipse circumferences, however, it has 100% accuracy with circles.
+        return 2 * Math.PI * Math.sqrt((Math.pow(this.r1, 2) + Math.pow(this.r2, 2)) / 2); // this is a formula used to approximate ellipse circumferences, however, it has 100% accuracy for circles.
     }
 
     boolean equals(Ellipse c) {
@@ -253,27 +253,27 @@ class RegularPolygon {
 class MethodExplorer {
     public static void main(String[] args) {
 
-        /* You can test my code out here!
-            // Rectangle work
-            Rectangle rect = new Rectangle(5, 10);
-            System.out.println(rect.toString()); // (rectangle with length 5.0, width 10.0)
+        // You can test my code out here!
+        
+        // Rectangle work
+        Rectangle rect = new Rectangle(5, 10);
+        System.out.println(rect.toString()); // (rectangle with length 5.0, width 10.0)
     
-            rect.setColor("blue");
-            System.out.println(rect.toString()); // final state (blue rectangle with length 5.0, width 10.0)
+        rect.setColor("blue");
+        System.out.println(rect.toString()); // final state (blue rectangle with length 5.0, width 10.0)
     
-            double area = rect.getArea();
-            System.out.println("The area of the rectangle is: " + area); // (The area of the rectangle is: 50.0)
+        double area = rect.getArea();
+        System.out.println("The area of the rectangle is: " + area); // (The area of the rectangle is: 50.0)
     
-            // Circle work
-            Ellipse circ = new Ellipse(3);
-            System.out.println(circ.toString()); // (circle with radius 3.0)
+        // Circle work
+        Ellipse circ = new Ellipse(3);
+        System.out.println(circ.toString()); // (circle with radius 3.0)
     
-            circ.scale(2);
-            System.out.println(circ.toString()); // (circle with radius 6.0)
+        circ.scale(2);
+        System.out.println(circ.toString()); // (circle with radius 6.0)
     
-            circ.scale(2, 3);
-            System.out.println(circ.toString()); // final state (ellipse with radius 12.0 and 18.0)
-        */
+        circ.scale(2, 3);
+        System.out.println(circ.toString()); // final state (ellipse with radius 12.0 and 18.0)
 
     }
 }
