@@ -6,86 +6,86 @@ class MethodExplorer {
         String color;
 
         Ellipse(double x, double y) {
-            this.r1 = x;
-            this.r2 = y;
+            r1 = x;
+            r2 = y;
         }
 
         Ellipse(double x) {
-            this.r1 = x;
-            this.r2 = x;
+            r1 = x;
+            r2 = x;
         }
 
         Ellipse() {
-            this.r1 = 1;
-            this.r2 = 1;
+            r1 = 1;
+            r2 = 1;
         }
 
         /*
             short-hand w/o overloading
             Ellipse(double... x) {
-                this.r1 = x.length > 0 ? x[0] : 1;
-                this.r2 = x.length > 1 ? x[1] : x[0];
+                r1 = x.length > 0 ? x[0] : 1;
+                r2 = x.length > 1 ? x[1] : x[0];
             }
               
             void setRadius(double... x) {
-                this.r1 = x.length > 0 ? x[0] : 1;
-                this.r2 = x.length > 0 ? x[1] : x[0];
+                r1 = x.length > 0 ? x[0] : 1;
+                r2 = x.length > 0 ? x[1] : x[0];
             }
         */
 
         void setRadius(double x, double y) {
-            this.r1 = x;
-            this.r2 = y;
+            r1 = x;
+            r2 = y;
         }
 
         void setRadius(double x) {
-            this.r1 = x;
-            this.r2 = x;
+            r1 = x;
+            r2 = x;
         }
 
         double[] getRadius() {
-            double[] arr = { this.r1, this.r2 };
+            double[] arr = { r1, r2 };
             return arr;
         }
 
         double getArea() {
-            return Math.PI * this.r1 * this.r2;
+            return Math.PI * r1 * r2;
         }
 
         double getCircumference() {
             // approximate within 5% if it becomes a "squashed" ellipse
-            return 2 * Math.PI * Math.sqrt((Math.pow(this.r1, 2) + Math.pow(this.r2, 2)) / 2); // this is a formula used to approximate ellipse circumferences, however, it has 100% accuracy for circles.
+            return 2 * Math.PI * Math.sqrt((Math.pow(r1, 2) + Math.pow(r2, 2)) / 2); // this is a formula used to approximate ellipse circumferences, however, it has 100% accuracy for circles.
         }
 
         boolean equals(Ellipse c) {
-            return (this.r1 == c.r1 && this.r2 == c.r2 && this.color == c.color);
+            return (r1 == c.r1 && r2 == c.r2 && color == c.color);
         }
 
         public String toString() {
-            String str = r1 == r2 ? "circle with radius " + r1 : "ellipse with radius " + this.r1 + " and " + this.r2; // if circle, print circle; if ellipse, print ellipse.
-            return this.color != null ? this.color + " " + str : str; // if there's a color, print it with that.
+            String str = r1 == r2 ? "circle with radius " + r1 : "ellipse with radius " + r1 + " and " + r2; // if circle, print circle; if ellipse, print ellipse.
+            return color != null ? color + " " + str : str; // if there's a color, print it with that.
         }
 
         /*
             short-hand w/o overloading
             void scale(double... x) {
-                this.r1 *= x[0];
-                this.r2 *= x.length > 1 ? x[1] : x[0];
+                r1 *= x[0];
+                r2 *= x.length > 1 ? x[1] : x[0];
             }
         */
 
         void scale(double x, double y) {
-            this.r1 *= x;
-            this.r2 *= y;
+            r1 *= x;
+            r2 *= y;
         }
 
         void scale(double x) {
-            this.r1 *= x;
-            this.r2 *= x;
+            r1 *= x;
+            r2 *= x;
         }
 
         void setColor(String c) {
-            this.color = c;
+            color = c;
         }
 
     }
@@ -96,63 +96,63 @@ class MethodExplorer {
         String color;
 
         Rectangle(double x, double y) {
-            this.length = x;
-            this.width = y;
+            length = x;
+            width = y;
         }
 
         Rectangle(double x) {
-            this.length = x;
-            this.width = x;
+            length = x;
+            width = x;
         }
 
         Rectangle() {
-            this.length = 1;
-            this.width = 1;
+            length = 1;
+            width = 1;
         }
 
         /*
             short-hand w/o overloading
             Rectangle(double... x) {
-                this.length = x.length > 0 ? x[0] : 1;
-                this.width = x.length > 1 ? x[1] : x[0];
+                length = x.length > 0 ? x[0] : 1;
+                width = x.length > 1 ? x[1] : x[0];
             }
         */
 
         void setLength(double x) {
-            this.length = x;
+            length = x;
         }
 
         void setWidth(double x) {
-            this.width = x;
+            width = x;
         }
 
         double getLength() {
-            return this.length;
+            return length;
         }
 
         double getWidth() {
-            return this.width;
+            return width;
         }
 
         double getArea() {
-            return this.length * this.width;
+            return length * width;
         }
 
         double getPerimeter() {
-            return this.length * 2 + this.width * 2;
+            return length * 2 + width * 2;
         }
 
         boolean equals(Rectangle r) {
-            return (this.length == r.length && this.width == r.width && this.color == r.color);
+            return (length == r.length && width == r.width && color == r.color);
         }
 
         public String toString() {
-            String str = "rectangle with length " + this.length + ", width " + this.width;
-            return this.color != null ? this.color + " " + str : str; // if there's a color, print it with that.
+            String str = "rectangle with length " + length + ", width " + width;
+            return color != null ? color + " " + str : str; // if there's a color, print it with that.
         }
 
         void setColor(String c) {
-            this.color = c;
+            color = c;
         }
 
     }
@@ -183,73 +183,73 @@ class MethodExplorer {
         String color;
 
         RegularPolygon(int y, double x) {
-            this.length = x;
-            this.sides = y;
+            length = x;
+            sides = y;
         }
 
         RegularPolygon(double x) {
-            this.length = x;
+            length = x;
         }
 
         RegularPolygon(int y) {
-            this.sides = y;
+            sides = y;
         }
 
         RegularPolygon() {
-            this.length = 1;
-            this.sides = 3;
+            length = 1;
+            sides = 3;
         }
 
         void setSideLength(int x) {
-            this.length = x;
+            length = x;
         }
 
         void setNumSides(int x) {
-            this.sides = x;
+            sides = x;
         }
 
         int getNumSides() {
-            return this.sides;
+            return sides;
         }
 
         double getSideLength() {
-            return this.length;
+            return length;
         }
 
         double getArea() {
-            return this.sides * Math.pow(this.length, 2) * (1 / Math.tan(Math.PI / this.sides) / 4);
+            return sides * Math.pow(length, 2) * (1 / Math.tan(Math.PI / sides) / 4);
         }
 
         double getPerimeter() {
-            return this.length * this.sides;
+            return length * sides;
         }
 
         boolean equals(RegularPolygon r) {
-            return (this.length == r.length && this.sides == r.sides && this.color == r.color);
+            return (length == r.length && sides == r.sides && color == r.color);
         }
 
         void addSides(int x) {
-            this.sides += x;
+            sides += x;
         }
 
         void addSides() {
-            this.sides++;
+            sides++;
         }
 
         public String toString() {
             String str;
-            str = "polygon of " + this.sides + " sides with side length " + this.length; // worst case scenario; we cannot name the polygon.
-            if (this.sides >= 3 && this.sides <= 20) {
-                str = "regular " + shapes[this.sides - 3] + " with side length " + this.length; // sides > 4 so we search the array and add regular to the start of it.
-                if (this.sides <= 4) {
-                    str = shapes[this.sides - 3] + " with side length " + this.length; // either it's an equilateral triangle or square.
+            str = "polygon of " + sides + " sides with side length " + length; // worst case scenario; we cannot name the polygon.
+            if (sides >= 3 && sides <= 20) {
+                str = "regular " + shapes[sides - 3] + " with side length " + length; // sides > 4 so we search the array and add regular to the start of it.
+                if (sides <= 4) {
+                    str = shapes[sides - 3] + " with side length " + length; // either it's an equilateral triangle or square.
                 }
             }
             return color != null ? color + " " + str : str; // if there's a color, print it with that.
         }
 
         void setColor(String c) {
-            this.color = c;
+            color = c;
         }
 
     }
